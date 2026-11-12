@@ -23,7 +23,7 @@
       padding:16px; gap:24px;
     }
 
-    /* Panel oculto por defecto (se activa solo con ?present=1) */
+    /* Panel de cátedra oculto por defecto (activar con ?present=1) */
     .panel {
       display:none; width:300px; background:#232322; border:1px solid var(--bd); border-radius:18px;
       padding:16px; flex-direction:column; gap:12px;
@@ -65,8 +65,6 @@
       .bezel { padding:0; border:none; border-radius:0; box-shadow:none; width:100%; height:100dvh; background:var(--bg); }
       .phone { width:100%; height:100dvh; border-radius:0; }
       .status { display:none !important; }
-      .botbar { width:100% !important; grid-template-columns:repeat(5,1fr) !important; }
-      .nbtn { width:100% !important; }
       .splash { min-height:100% !important; height:100%; }
     }
 
@@ -78,27 +76,89 @@
     .bands.on { display:block; }
     .b1 { position:absolute; top:0; left:0; right:0; height:24px; border-bottom:1px dashed rgba(255,214,0,.7); }
     .b2 { position:absolute; top:24px; left:0; right:0; height:56px; border-bottom:1px dashed rgba(255,214,0,.7); }
-    .b3 { position:absolute; bottom:0; left:0; right:0; height:56px; border-top:1px dashed rgba(255,214,0,.7); }
+    .b3 { position:absolute; bottom:16px; left:16px; right:16px; height:56px; border:1px dashed rgba(255,214,0,.7); border-radius:20px; }
 
-    /* Barras 24 + 56 + área útil + 56 */
+    /* Barras */
     .status { height:24px; min-height:24px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; font-size:11px; font-weight:600; }
     .status-r { display:flex; align-items:center; gap:6px; }
     .topbar { height:56px; min-height:56px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--bd); gap:10px; }
-    .topbar.hide, .botbar.hide { display:none; }
+    .topbar.hide, .botbar-wrap.hide { display:none; }
     .content { flex:1; overflow-y:auto; position:relative; }
     .content::-webkit-scrollbar { width:4px; }
     .content::-webkit-scrollbar-thumb { background:#555; border-radius:4px; }
-    .scr { display:none; min-height:100%; padding:16px; }
+    .scr { display:none; min-height:100%; padding:16px 16px 26px; }
     .scr.on { display:block; }
     .scr.np { padding:0; height:100%; }
 
-    .botbar { height:56px; min-height:56px; width:360px; background:#232322; border-top:1px solid var(--bd); display:grid; grid-template-columns:repeat(5,72px); }
-    .nbtn { width:72px; height:56px; background:none; border:none; color:var(--muted); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; cursor:pointer; position:relative; font-size:9px; font-weight:600; }
+    /* OPCIÓN B: Barra flotante con 16px de margen inferior y lateral + botón + circular elevado */
+    .botbar-wrap {
+      padding:0 16px max(16px, env(safe-area-inset-bottom));
+      background:transparent;
+      position:relative;
+      z-index:20;
+    }
+    .botbar {
+      width:100%;
+      height:56px;
+      background:#232322;
+      border:1px solid rgba(247,245,239,0.14);
+      border-radius:20px;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      align-items:center;
+      box-shadow:0 10px 28px rgba(0,0,0,.48);
+      position:relative;
+    }
+    .nbtn {
+      width:100%;
+      height:56px;
+      background:none;
+      border:none;
+      color:var(--muted);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:3px;
+      cursor:pointer;
+      position:relative;
+      font-size:9px;
+      font-weight:600;
+    }
     .nbtn.on { color:var(--yellow); }
-    .nbtn.on::before { content:""; position:absolute; top:0; width:32px; height:3px; background:var(--yellow); border-radius:0 0 3px 3px; }
-    .npill { width:44px; height:34px; border-radius:11px; background:var(--violet); color:var(--cream); display:flex; align-items:center; justify-content:center; }
-    .nbtn.on .npill { background:var(--yellow); color:var(--bg); }
-    .badge { position:absolute; top:6px; right:17px; min-width:15px; height:15px; padding:0 4px; border-radius:99px; background:var(--red); color:#fff; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center; border:1.5px solid #232322; }
+    .ic-wrap { position:relative; display:inline-flex; align-items:center; justify-content:center; }
+    .npill {
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      background:var(--violet);
+      color:var(--cream);
+      border:4px solid var(--bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transform:translateY(-14px);
+      box-shadow:0 6px 18px rgba(123,63,242,.48);
+      transition:transform .15s, background .15s;
+    }
+    .nbtn.on .npill { background:var(--yellow); color:var(--bg); box-shadow:0 6px 18px rgba(255,214,0,.42); }
+    .badge {
+      position:absolute;
+      top:-4px;
+      right:-6px;
+      min-width:15px;
+      height:15px;
+      padding:0 4px;
+      border-radius:99px;
+      background:var(--red);
+      color:#fff;
+      font-size:9px;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1.5px solid #232322;
+    }
 
     /* Componentes UI */
     .ibtn { width:36px; height:36px; border-radius:50%; border:none; background:var(--s1); color:var(--cream); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
@@ -149,7 +209,7 @@
     .chip { padding:6px 11px; border-radius:99px; border:1px solid var(--bd); background:var(--s1); color:var(--cream); font-size:12px; cursor:pointer; display:inline-flex; align-items:center; gap:5px; }
     .chip.on { background:var(--violet); border-color:var(--violet); font-weight:600; }
 
-    .map { width:100%; height:350px; background:#232524; border-radius:14px; border:1px solid var(--bd); position:relative; overflow:hidden; }
+    .map { width:100%; height:340px; background:#232524; border-radius:14px; border:1px solid var(--bd); position:relative; overflow:hidden; }
     .river { position:absolute; top:-20px; right:-30px; width:110px; height:420px; background:#192c3b; transform:rotate(-16deg); }
     .pin { position:absolute; transform:translate(-50%,-100%); background:var(--violet); color:var(--cream); border:2px solid var(--yellow); border-radius:99px; padding:4px 9px; font-size:11px; font-weight:700; cursor:pointer; z-index:4; display:inline-flex; align-items:center; gap:4px; }
     .pin.on { background:var(--yellow); color:var(--bg); border-color:var(--cream); z-index:6; }
@@ -164,15 +224,15 @@
     .bbl { max-width:82%; padding:9px 12px; border-radius:14px; font-size:13px; line-height:1.35; }
     .bbl.r { align-self:flex-start; background:var(--s1); border-bottom-left-radius:4px; }
     .bbl.s { align-self:flex-end; background:var(--violet); border-bottom-right-radius:4px; }
-    .cbar { padding:8px 10px; background:#232322; border-top:1px solid var(--bd); display:flex; gap:8px; }
-    .cbar input { flex:1; height:36px; border-radius:99px; border:1px solid var(--bd); background:var(--in); color:var(--cream); padding:0 12px; font-size:13px; outline:none; }
+    .cbar { padding:10px 12px max(12px, env(safe-area-inset-bottom)); background:#232322; border-top:1px solid var(--bd); display:flex; gap:8px; }
+    .cbar input { flex:1; height:38px; border-radius:99px; border:1px solid var(--bd); background:var(--in); color:var(--cream); padding:0 14px; font-size:13px; outline:none; }
     .lcard { background:var(--s1); border:1px solid var(--bd); border-radius:12px; padding:11px; margin-bottom:9px; display:flex; gap:10px; align-items:center; cursor:pointer; }
     .lcard.unr { border-left:3px solid var(--yellow); }
 
     .modal-bg { position:absolute; inset:0; background:rgba(15,15,14,.82); z-index:60; display:none; align-items:center; justify-content:center; padding:18px; }
     .modal-bg.on { display:flex; }
     .modal { width:100%; background:#323230; border:1px solid rgba(255,214,0,.45); border-radius:18px; padding:18px; text-align:center; display:flex; flex-direction:column; gap:8px; }
-    .toast { position:absolute; bottom:66px; left:16px; right:16px; background:var(--yellow); color:var(--bg); font-size:12px; font-weight:700; padding:9px 12px; border-radius:10px; z-index:70; display:none; text-align:center; }
+    .toast { position:absolute; bottom:90px; left:16px; right:16px; background:var(--yellow); color:var(--bg); font-size:12px; font-weight:700; padding:9px 12px; border-radius:10px; z-index:70; display:none; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,.35); }
     .toast.on { display:block; }
   </style>
 </head>
@@ -331,7 +391,10 @@
         </div>
       </section>
 
-      <nav class="botbar hide" id="botbar"></nav>
+      <!-- BARRA INFERIOR FLOTANTE -->
+      <nav class="botbar-wrap hide" id="botbarWrap">
+        <div class="botbar" id="botbar"></div>
+      </nav>
 
       <div class="modal-bg" id="mBg">
         <div class="modal">
@@ -448,11 +511,11 @@
       byId('botbar').innerHTML = items.map(function(it){
         var on = (activeNav === it.k);
         if (it.k === '12') {
-          return '<button type="button" class="nbtn ' + (on?'on':'') + '" onclick="go(\'12\')"><div class="npill">' + ic('plus', false, 20) + '</div></button>';
+          return '<button type="button" class="nbtn ' + (on?'on':'') + '" onclick="go(\'12\')" aria-label="Crear proyecto"><div class="npill">' + ic('plus', false, 22) + '</div></button>';
         }
         return '<button type="button" class="nbtn ' + (on?'on':'') + '" onclick="go(\'' + it.k + '\')">' +
-          ic(it.icon, on, 19) + '<span>' + it.lbl + '</span>' +
-          (it.badge ? '<span class="badge">' + it.badge + '</span>' : '') +
+          '<span class="ic-wrap">' + ic(it.icon, on, 19) + (it.badge ? '<span class="badge">' + it.badge + '</span>' : '') + '</span>' +
+          '<span>' + it.lbl + '</span>' +
         '</button>';
       }).join('');
     }
@@ -464,7 +527,7 @@
       byId('content').scrollTop = 0;
       var hide = (id==='01'||id==='02'||id==='03'||id==='04');
       byId('topbar').classList.toggle('hide', hide);
-      byId('botbar').classList.toggle('hide', hide || id==='08B');
+      byId('botbarWrap').classList.toggle('hide', hide || id==='08B');
       if (!hide) drawTop(id);
       var m = {'05':'05','07':'05','09':'05','10':'05','11':'05','16':'16','12':'12','15':'15','08':'08','08B':'08'}[id] || '';
       drawBotBar(m);
