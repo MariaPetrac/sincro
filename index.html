@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <title>Sincro — Una comunidad que crea y colabora</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg:#2B2B2A; --s1:#353533; --s2:#41413E; --in:#222221;
@@ -18,7 +18,7 @@
     * { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
     html, body { height:100%; }
     body {
-      font-family:'Inter','Roboto',Arial,sans-serif; background:#141413; color:var(--cream);
+      font-family:'Roboto',Arial,sans-serif; background:#141413; color:var(--cream);
       min-height:100dvh; display:flex; align-items:center; justify-content:center;
       padding:16px; gap:24px;
     }
@@ -30,7 +30,7 @@
     }
     body.present-mode .panel { display:flex; }
     .panel-head { display:flex; align-items:center; gap:10px; }
-    .panel-head h1 { font-family:'Roboto',sans-serif; font-weight:900; font-size:18px; }
+    .panel-head h1 { font-family:'Roboto',Arial,sans-serif; font-weight:900; font-size:18px; }
     .panel-head p { font-size:11px; color:var(--muted); }
     .lbl { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--yellow); }
     .toggle-row {
@@ -41,7 +41,7 @@
     .jumper { display:grid; grid-template-columns:1fr 1fr; gap:6px; max-height:280px; overflow-y:auto; }
     .jbtn {
       background:var(--bg); color:var(--cream); border:1px solid var(--bd); border-radius:8px;
-      padding:7px 8px; font-size:11px; text-align:left; cursor:pointer;
+      padding:7px 8px; font-family:'Roboto',Arial,sans-serif; font-size:11px; text-align:left; cursor:pointer;
     }
     .jbtn.active { background:var(--violet); border-color:var(--violet); font-weight:700; }
 
@@ -79,7 +79,7 @@
     .b3 { position:absolute; bottom:16px; left:16px; right:16px; height:56px; border:1px dashed rgba(255,214,0,.7); border-radius:20px; }
 
     /* Barras */
-    .status { height:24px; min-height:24px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; font-size:11px; font-weight:600; }
+    .status { height:24px; min-height:24px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; font-size:11px; font-weight:500; }
     .status-r { display:flex; align-items:center; gap:6px; }
     .topbar { height:56px; min-height:56px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--bd); gap:10px; }
     .topbar.hide, .botbar-wrap.hide { display:none; }
@@ -90,7 +90,7 @@
     .scr.on { display:block; }
     .scr.np { padding:0; height:100%; }
 
-    /* OPCIÓN B: Barra flotante con 16px de margen inferior y lateral + botón + circular elevado */
+    /* Barra flotante (Opción B) + botón + circular elevado */
     .botbar-wrap {
       padding:0 16px max(16px, env(safe-area-inset-bottom));
       background:transparent;
@@ -122,10 +122,11 @@
       gap:3px;
       cursor:pointer;
       position:relative;
+      font-family:'Roboto',Arial,sans-serif;
       font-size:9px;
-      font-weight:600;
+      font-weight:500;
     }
-    .nbtn.on { color:var(--yellow); }
+    .nbtn.on { color:var(--yellow); font-weight:700; }
     .ic-wrap { position:relative; display:inline-flex; align-items:center; justify-content:center; }
     .npill {
       width:52px;
@@ -161,30 +162,34 @@
     }
 
     /* Componentes UI */
-    .ibtn { width:36px; height:36px; border-radius:50%; border:none; background:var(--s1); color:var(--cream); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .ibtn { width:36px; height:36px; border-radius:50%; border:none; background:var(--s1); color:var(--cream); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Roboto',Arial,sans-serif; }
     .ibtn:hover { background:var(--s2); }
     .avbtn { width:36px; height:36px; border-radius:50%; border:2px solid var(--violet); overflow:hidden; cursor:pointer; padding:0; background:var(--s1); flex-shrink:0; }
     .avbtn img { width:100%; height:100%; object-fit:cover; display:block; }
-    .spill { flex:1; height:36px; background:var(--s1); border:1px solid var(--bd); border-radius:99px; display:flex; align-items:center; gap:8px; padding:0 12px; color:var(--muted); font-size:12px; cursor:pointer; }
-    .wordmark { font-family:'Roboto',sans-serif; font-weight:900; letter-spacing:-.03em; line-height:1; display:inline-flex; }
+    .spill { flex:1; height:36px; background:var(--s1); border:1px solid var(--bd); border-radius:99px; display:flex; align-items:center; gap:8px; padding:0 12px; color:var(--muted); font-size:12px; font-weight:400; cursor:pointer; }
+    .wordmark { font-family:'Roboto',Arial,sans-serif; font-weight:900; letter-spacing:-.03em; line-height:1; display:inline-flex; }
     .idot { position:relative; display:inline-block; }
     .idot i { position:absolute; top:.04em; left:50%; transform:translateX(-50%); width:.23em; height:.23em; border-radius:50%; background:var(--yellow); display:block; }
-    .btn { width:100%; height:48px; border-radius:99px; border:none; background:var(--violet); color:var(--cream); font-size:15px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; }
+    .btn { width:100%; height:48px; border-radius:99px; border:none; background:var(--violet); color:var(--cream); font-family:'Roboto',Arial,sans-serif; font-size:15px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; }
     .btn.y { background:var(--yellow); color:var(--bg); }
     .btn.sec { background:transparent; border:1.5px solid var(--violet); }
-    .btn.sm { width:auto; height:32px; padding:0 12px; font-size:12px; gap:5px; }
+    .btn.sm { width:auto; height:32px; padding:0 12px; font-size:12px; font-weight:500; gap:5px; }
 
     .splash { min-height:100%; padding:32px 24px; display:flex; flex-direction:column; justify-content:space-between; align-items:center; text-align:center; background:radial-gradient(circle at 85% 12%,rgba(123,63,242,.24),transparent 45%), var(--bg); }
     .fg { display:flex; flex-direction:column; gap:5px; margin-bottom:11px; }
-    .fl { font-size:12px; font-weight:600; color:var(--muted); }
-    .fi, .ft, .fs { width:100%; background:var(--in); border:1px solid var(--bd); border-radius:10px; color:var(--cream); font-family:inherit; font-size:13px; padding:10px 12px; outline:none; }
+    .fl { font-size:12px; font-weight:500; color:var(--muted); }
+    .fi, .ft, .fs { width:100%; background:var(--in); border:1px solid var(--bd); border-radius:10px; color:var(--cream); font-family:'Roboto',Arial,sans-serif; font-size:13px; font-weight:400; padding:10px 12px; outline:none; }
     .ft { min-height:74px; resize:vertical; }
+    .upbox { width:100%; background:var(--in); border:1.5px dashed rgba(247,245,239,.22); border-radius:10px; color:var(--muted); font-family:'Roboto',Arial,sans-serif; font-size:12px; font-weight:500; padding:14px 12px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; overflow:hidden; position:relative; }
+    .upbox.has-img { padding:0; height:104px; border-style:solid; border-color:var(--violet); }
+    .upbox img { width:100%; height:100%; object-fit:cover; display:block; }
+    .upbox-tag { position:absolute; bottom:8px; right:8px; background:rgba(43,43,42,.88); color:var(--cream); font-size:11px; font-weight:500; padding:4px 9px; border-radius:99px; border:1px solid var(--bd); }
     .seg { display:grid; grid-template-columns:1fr 1fr; background:var(--s1); padding:4px; border-radius:99px; margin-bottom:14px; border:1px solid var(--bd); }
-    .seg button { height:34px; border-radius:99px; border:none; background:none; color:var(--muted); font-size:13px; font-weight:600; cursor:pointer; }
-    .seg button.on { background:var(--violet); color:var(--cream); }
+    .seg button { height:34px; border-radius:99px; border:none; background:none; color:var(--muted); font-family:'Roboto',Arial,sans-serif; font-size:13px; font-weight:500; cursor:pointer; }
+    .seg button.on { background:var(--violet); color:var(--cream); font-weight:700; }
     .t3 { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
-    .t3 button { padding:8px 4px; border-radius:10px; border:1px solid var(--bd); background:var(--s1); color:var(--muted); font-size:11px; font-weight:600; cursor:pointer; }
-    .t3 button.on { background:var(--yellow); color:var(--bg); border-color:var(--yellow); }
+    .t3 button { padding:8px 4px; border-radius:10px; border:1px solid var(--bd); background:var(--s1); color:var(--muted); font-family:'Roboto',Arial,sans-serif; font-size:11px; font-weight:500; cursor:pointer; }
+    .t3 button.on { background:var(--yellow); color:var(--bg); border-color:var(--yellow); font-weight:700; }
 
     .g2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
     .card { background:var(--s1); border:1px solid var(--bd); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; cursor:pointer; }
@@ -194,10 +199,10 @@
     .fav.on { color:var(--magenta); }
     .cbody { padding:10px; display:flex; flex-direction:column; gap:5px; flex:1; }
     .ctit { font-size:13px; font-weight:700; line-height:1.25; }
-    .cdesc { font-size:11px; color:var(--muted); line-height:1.3; }
+    .cdesc { font-size:11px; font-weight:400; color:var(--muted); line-height:1.3; }
     .cmore { font-size:11px; font-weight:700; color:var(--yellow); margin-top:auto; display:inline-flex; align-items:center; gap:4px; }
     .tags { display:flex; flex-wrap:wrap; gap:5px; }
-    .tag { font-size:10px; font-weight:600; padding:3px 8px; border-radius:99px; background:rgba(123,63,242,.2); color:#D5BEFF; border:1px solid rgba(123,63,242,.35); }
+    .tag { font-size:10px; font-weight:500; padding:3px 8px; border-radius:99px; background:rgba(123,63,242,.2); color:#D5BEFF; border:1px solid rgba(123,63,242,.35); }
     .tag.y { background:rgba(255,214,0,.16); color:var(--yellow); border-color:rgba(255,214,0,.35); }
     .tag.m { background:rgba(255,45,141,.16); color:#FF92C4; border-color:rgba(255,45,141,.35); }
     .pcard { padding:14px 10px; align-items:center; text-align:center; }
@@ -206,12 +211,12 @@
     .row { display:flex; justify-content:space-between; font-size:12px; padding:3px 0; gap:8px; }
     .row span:first-child { color:var(--muted); }
     .chips { display:flex; flex-wrap:wrap; gap:6px; }
-    .chip { padding:6px 11px; border-radius:99px; border:1px solid var(--bd); background:var(--s1); color:var(--cream); font-size:12px; cursor:pointer; display:inline-flex; align-items:center; gap:5px; }
-    .chip.on { background:var(--violet); border-color:var(--violet); font-weight:600; }
+    .chip { padding:6px 11px; border-radius:99px; border:1px solid var(--bd); background:var(--s1); color:var(--cream); font-family:'Roboto',Arial,sans-serif; font-size:12px; font-weight:400; cursor:pointer; display:inline-flex; align-items:center; gap:5px; }
+    .chip.on { background:var(--violet); border-color:var(--violet); font-weight:500; }
 
     .map { width:100%; height:340px; background:#232524; border-radius:14px; border:1px solid var(--bd); position:relative; overflow:hidden; }
     .river { position:absolute; top:-20px; right:-30px; width:110px; height:420px; background:#192c3b; transform:rotate(-16deg); }
-    .pin { position:absolute; transform:translate(-50%,-100%); background:var(--violet); color:var(--cream); border:2px solid var(--yellow); border-radius:99px; padding:4px 9px; font-size:11px; font-weight:700; cursor:pointer; z-index:4; display:inline-flex; align-items:center; gap:4px; }
+    .pin { position:absolute; transform:translate(-50%,-100%); background:var(--violet); color:var(--cream); border:2px solid var(--yellow); border-radius:99px; padding:4px 9px; font-family:'Roboto',Arial,sans-serif; font-size:11px; font-weight:700; cursor:pointer; z-index:4; display:inline-flex; align-items:center; gap:4px; }
     .pin.on { background:var(--yellow); color:var(--bg); border-color:var(--cream); z-index:6; }
     .mpop { position:absolute; left:10px; right:10px; bottom:10px; background:rgba(43,43,42,.95); border:1px solid var(--violet); border-radius:12px; padding:10px; z-index:8; display:flex; justify-content:space-between; align-items:center; gap:8px; }
 
@@ -221,11 +226,11 @@
     .thead { padding:10px 14px; background:var(--s1); border-bottom:1px solid var(--bd); display:flex; align-items:center; gap:10px; }
     .thead img { width:34px; height:34px; border-radius:50%; object-fit:cover; }
     .msgs { flex:1; overflow-y:auto; padding:12px 14px; display:flex; flex-direction:column; gap:8px; }
-    .bbl { max-width:82%; padding:9px 12px; border-radius:14px; font-size:13px; line-height:1.35; }
+    .bbl { max-width:82%; padding:9px 12px; border-radius:14px; font-size:13px; font-weight:400; line-height:1.35; }
     .bbl.r { align-self:flex-start; background:var(--s1); border-bottom-left-radius:4px; }
     .bbl.s { align-self:flex-end; background:var(--violet); border-bottom-right-radius:4px; }
     .cbar { padding:10px 12px max(12px, env(safe-area-inset-bottom)); background:#232322; border-top:1px solid var(--bd); display:flex; gap:8px; }
-    .cbar input { flex:1; height:38px; border-radius:99px; border:1px solid var(--bd); background:var(--in); color:var(--cream); padding:0 14px; font-size:13px; outline:none; }
+    .cbar input { flex:1; height:38px; border-radius:99px; border:1px solid var(--bd); background:var(--in); color:var(--cream); font-family:'Roboto',Arial,sans-serif; padding:0 14px; font-size:13px; outline:none; }
     .lcard { background:var(--s1); border:1px solid var(--bd); border-radius:12px; padding:11px; margin-bottom:9px; display:flex; gap:10px; align-items:center; cursor:pointer; }
     .lcard.unr { border-left:3px solid var(--yellow); }
 
@@ -242,7 +247,7 @@
   <aside class="panel">
     <div class="panel-head">
       <div class="logo-box" style="width:42px; height:42px;" data-logo></div>
-      <div><h1>Sincro · Modo Cátedra</h1><p>360 × 640 px · Sistema 8pt</p></div>
+      <div><h1>Sincro · Modo Cátedra</h1><p>360 × 640 px · Sistema 8pt · Roboto</p></div>
     </div>
     <div class="lbl">Guías de Diseño</div>
     <label class="toggle-row"><span>Mostrar grilla 4 col (8pt)</span><input type="checkbox" id="toggleGrid" /></label>
@@ -273,7 +278,7 @@
             <div class="logo-box" style="width:82px; height:82px; margin-top:16px;" data-logo></div>
             <div>
               <div class="wordmark" style="font-size:54px;">S<span class="idot">ı<i></i></span>ncro</div>
-              <p style="font-size:17px; margin-top:12px; line-height:1.35;">Sumate a una comunidad que crea y colabora</p>
+              <p style="font-size:17px; font-weight:400; margin-top:12px; line-height:1.35;">Sumate a una comunidad que crea y colabora</p>
               <p style="font-size:12px; color:var(--muted); margin-top:8px;">Escena audiovisual y teatral de Rosario.</p>
             </div>
             <button type="button" class="btn" id="btnUnirme">Unirme</button>
@@ -289,7 +294,7 @@
             </div>
             <div style="width:100%; display:flex; flex-direction:column; gap:12px;">
               <button type="button" class="btn" onclick="go('03')">Iniciar sesión</button>
-              <p style="font-size:13px; color:var(--muted);">¿No tenés cuenta? <button type="button" style="background:none;border:none;color:var(--yellow);font-weight:700;text-decoration:underline;cursor:pointer;" onclick="go('04')">Registrate</button></p>
+              <p style="font-size:13px; color:var(--muted);">¿No tenés cuenta? <button type="button" style="background:none;border:none;color:var(--yellow);font-family:'Roboto',Arial,sans-serif;font-weight:700;text-decoration:underline;cursor:pointer;" onclick="go('04')">Registrate</button></p>
             </div>
           </div>
         </div>
@@ -298,7 +303,7 @@
           <button type="button" class="ibtn" onclick="go('02')" data-ic="back"></button>
           <div style="text-align:center; margin:20px 0 26px;">
             <div class="wordmark" style="font-size:40px;">S<span class="idot">ı<i></i></span>ncro</div>
-            <p style="color:var(--yellow); font-weight:600; margin-top:8px;">Hola de vuelta :)</p>
+            <p style="color:var(--yellow); font-weight:500; margin-top:8px;">Hola de vuelta :)</p>
           </div>
           <div class="fg"><label class="fl">E-mail</label><input class="fi" value="camila.rinaldi@epctv.edu.ar"/></div>
           <div class="fg"><label class="fl">Contraseña</label><input class="fi" type="password" value="12345678"/></div>
@@ -308,7 +313,7 @@
         <div class="scr" id="s-04">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
             <button type="button" class="ibtn" onclick="go('02')" data-ic="back"></button>
-            <div><div class="wordmark" style="font-size:24px;">S<span class="idot">ı<i></i></span>ncro</div><p style="font-size:12px; color:var(--yellow);">¡Bienvenidx!</p></div>
+            <div><div class="wordmark" style="font-size:24px;">S<span class="idot">ı<i></i></span>ncro</div><p style="font-size:12px; font-weight:500; color:var(--yellow);">¡Bienvenidx!</p></div>
           </div>
           <div class="fg"><label class="fl">Nombre</label><input class="fi" placeholder="Camila"/></div>
           <div class="fg"><label class="fl">Apellido</label><input class="fi" placeholder="Rinaldi"/></div>
@@ -327,7 +332,7 @@
             <button type="button" id="huBtn" onclick="setHome('u')">Perfiles</button>
           </div>
           <div class="box" style="margin-top:0; display:flex; justify-content:space-between; align-items:center; background:linear-gradient(135deg,rgba(123,63,242,.24),rgba(255,45,141,.14));">
-            <div><strong style="font-size:12px; display:block;">Trama Rosarina · EPCTV & UNR</strong><span style="font-size:11px; color:var(--muted);">Convocatorias en Rosario</span></div>
+            <div><strong style="font-size:12px; font-weight:700; display:block;">Trama Rosarina · EPCTV & UNR</strong><span style="font-size:11px; color:var(--muted);">Convocatorias en Rosario</span></div>
             <span class="tag y">Rosario</span>
           </div>
           <div class="g2" id="homeGrid"></div>
@@ -368,6 +373,11 @@
         <div class="scr" id="s-12">
           <div class="fg"><label class="fl">Título del proyecto</label><input class="fi" id="npTit" placeholder="Ej. Corto: Río Paraná"/></div>
           <div class="fg"><label class="fl">Descripción</label><textarea class="ft" id="npDesc" placeholder="Detalles, fechas y locación..."></textarea></div>
+          <div class="fg">
+            <label class="fl">Subir imagen</label>
+            <input type="file" id="npImgFile" accept="image/*" style="display:none;" />
+            <button type="button" class="upbox" id="npImgBtn" onclick="byId('npImgFile').click()"></button>
+          </div>
           <div class="fg"><label class="fl">Categoría</label><div class="chips" id="npCat"></div></div>
           <div class="fg"><label class="fl">Perfiles buscados</label><div class="chips" id="npRol"></div></div>
           <div class="fg"><label class="fl">Tipo de proyecto</label><select class="fs" id="npTyp"><option>Remunerado</option><option>Cooperativo</option><option>Tesis</option></select></div>
@@ -399,12 +409,12 @@
       <div class="modal-bg" id="mBg">
         <div class="modal">
           <div id="mCheck" style="width:44px;height:44px;border-radius:50%;background:var(--yellow);color:var(--bg);display:inline-flex;align-items:center;justify-content:center;margin:0 auto;"></div>
-          <h3 id="mTit" style="font-size:16px;">¡Postulación enviada!</h3>
+          <h3 id="mTit" style="font-size:16px;font-weight:700;">¡Postulación enviada!</h3>
           <p id="mTxt" style="font-size:13px;color:var(--muted);line-height:1.4;"></p>
           <button type="button" class="btn" id="mChat">Enviar mensaje</button>
           <button type="button" class="btn y" id="mAct">Ver Mi Actividad</button>
           <button type="button" class="btn sec" style="height:40px;border-color:var(--red);color:#FF7E77;" id="mCan"></button>
-          <button type="button" style="background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;" onclick="closeM()">Seguir explorando</button>
+          <button type="button" style="background:none;border:none;color:var(--muted);font-family:'Roboto',Arial,sans-serif;font-size:12px;cursor:pointer;" onclick="closeM()">Seguir explorando</button>
         </div>
       </div>
 
@@ -437,7 +447,8 @@
         send: '<path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>',
         check: '<path d="M20 6L9 17l-5-5"/>',
         close: '<path d="M18 6L6 18M6 6l12 12"/>',
-        arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>'
+        arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+        image: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>'
       };
       return '<svg width="' + sz + '" height="' + sz + '" viewBox="0 0 24 24" fill="' + f + '" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + (p[name] || '') + '</svg>';
     }
@@ -492,7 +503,7 @@
     var TYPES = ['Remunerado','Cooperativo','Tesis'];
     var GENS = ['Indistinto','Mujer','Hombre'];
     var SCRS = [['01','01 Splash'],['02','02 Gateway'],['03','03 Login'],['04','04 Registro'],['05','05 Home'],['07','07 Proyecto'],['08','08A Chats'],['08B','08B Hilo'],['09','09 Perfil'],['10','10 Filtros'],['11','11 Resultados'],['12','12 Publicar'],['13','13 Mi Perfil'],['14','14 Editar'],['15','15 Alertas'],['16','16 Actividad']];
-    var npCat = 'Audiovisual', npRols = ['Sonido','Actuación'], tTimer = null;
+    var npCat = 'Audiovisual', npRols = ['Sonido','Actuación'], npCov = '', tTimer = null;
 
     function byId(id) { return document.getElementById(id); }
     function getP(id) { return S.projs.find(function(x){ return x.id === id; }) || S.projs[0]; }
@@ -553,12 +564,12 @@
       if (id==='05') { tb.innerHTML = av + '<div class="spill" onclick="go(\'10\')">' + ic('search', false, 14) + '<span>Buscar proyectos o roles...</span></div>'; return; }
       if (id==='08'||id==='15'||id==='16') {
         var tt = {'08':'Mensajes','15':'Notificaciones','16':'Mi actividad'}[id];
-        tb.innerHTML = av + '<strong style="flex:1;font-size:16px;">' + tt + '</strong>' + sr; return;
+        tb.innerHTML = av + '<strong style="flex:1;font-size:16px;font-weight:700;">' + tt + '</strong>' + sr; return;
       }
       var bk = id==='08B' ? '08' : (id==='11' ? '10' : (id==='14' ? '13' : '05'));
       var st = {'07':'Proyecto','08B':'Conversación','09':'Perfil','10':'Filtros','11':'Resultados','12':'Publicar','13':'Mi perfil','14':'Editar perfil'}[id] || 'Sincro';
       var rt = id==='13' ? '<button type="button" class="ibtn" onclick="go(\'14\')">' + ic('edit', false, 16) + '</button>' : sr;
-      tb.innerHTML = '<div style="display:flex;align-items:center;gap:10px;"><button type="button" class="ibtn" onclick="go(\'' + bk + '\')">' + ic('back', false, 18) + '</button><strong style="font-size:16px;">' + st + '</strong></div>' + rt;
+      tb.innerHTML = '<div style="display:flex;align-items:center;gap:10px;"><button type="button" class="ibtn" onclick="go(\'' + bk + '\')">' + ic('back', false, 18) + '</button><strong style="font-size:16px;font-weight:700;">' + st + '</strong></div>' + rt;
     }
 
     function cardP(p) {
@@ -582,8 +593,8 @@
       var fv = S.favP.indexOf(p.id) > -1, ap = S.apps.some(function(a){ return a.pid===p.id; });
       byId('projDet').innerHTML = '<div class="ccov" style="height:160px;border-radius:14px;margin-bottom:10px;"><img src="' + p.cov + '"/><button type="button" class="fav ' + (fv?'on':'') + '" onclick="togFavP(\'' + p.id + '\')">' + ic('heart', fv, 14) + '</button></div>' +
         '<div class="tags" style="margin-bottom:8px;"><span class="tag">' + p.cat + '</span><span class="tag y">' + p.typ + '</span>' + p.rols.map(function(r){return '<span class="tag m">'+r+'</span>';}).join('') + '</div>' +
-        '<h2 style="font-size:18px;margin-bottom:4px;">' + p.tit + '</h2><p style="font-size:12px;color:var(--muted);">Zona: ' + p.zon + ', Rosario</p>' +
-        '<div class="box" style="display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="openU(\'' + p.aid + '\')"><img src="' + p.aav + '" style="width:36px;height:36px;border-radius:50%;object-fit:cover;"/><div style="flex:1;"><strong style="font-size:13px;display:block;">' + p.aname + '</strong><span style="font-size:11px;color:var(--muted);">' + p.arol + '</span></div><span style="font-size:11px;color:var(--yellow);font-weight:700;display:inline-flex;align-items:center;gap:3px;">Ver ' + ic('arrow', false, 12) + '</span></div>' +
+        '<h2 style="font-size:18px;font-weight:700;margin-bottom:4px;">' + p.tit + '</h2><p style="font-size:12px;color:var(--muted);">Zona: ' + p.zon + ', Rosario</p>' +
+        '<div class="box" style="display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="openU(\'' + p.aid + '\')"><img src="' + p.aav + '" style="width:36px;height:36px;border-radius:50%;object-fit:cover;"/><div style="flex:1;"><strong style="font-size:13px;font-weight:700;display:block;">' + p.aname + '</strong><span style="font-size:11px;color:var(--muted);">' + p.arol + '</span></div><span style="font-size:11px;color:var(--yellow);font-weight:700;display:inline-flex;align-items:center;gap:3px;">Ver ' + ic('arrow', false, 12) + '</span></div>' +
         '<p style="font-size:13px;line-height:1.45;color:#DDDAD1;margin:10px 0 16px;">' + p.desc + '</p>' +
         '<button type="button" class="btn ' + (ap?'y':'') + '" onclick="applyP(\'' + p.id + '\')">' + (ap ? ic('check', false, 16) + ' Postulación enviada (gestionar)' : 'Postularme') + '</button>';
     }
@@ -602,16 +613,16 @@
 
     function drawProf(id) {
       var u = getU(id); S.uId = u.id; var fv = S.favU.indexOf(u.id) > -1;
-      byId('profDet').innerHTML = '<div style="text-align:center;position:relative;"><button type="button" class="fav ' + (fv?'on':'') + '" style="top:0;right:0;" onclick="togFavU(\'' + u.id + '\')">' + ic('heart', fv, 14) + '</button><img src="' + u.av + '" style="width:86px;height:86px;border-radius:50%;object-fit:cover;border:3px solid var(--yellow);margin-bottom:8px;"/><h2>' + u.nom + '</h2><div class="tags" style="justify-content:center;margin:8px 0;">' + u.rols.map(function(r){return '<span class="tag">'+r+'</span>';}).join('') + '</div></div>' +
+      byId('profDet').innerHTML = '<div style="text-align:center;position:relative;"><button type="button" class="fav ' + (fv?'on':'') + '" style="top:0;right:0;" onclick="togFavU(\'' + u.id + '\')">' + ic('heart', fv, 14) + '</button><img src="' + u.av + '" style="width:86px;height:86px;border-radius:50%;object-fit:cover;border:3px solid var(--yellow);margin-bottom:8px;"/><h2 style="font-size:24px;font-weight:700;">' + u.nom + '</h2><div class="tags" style="justify-content:center;margin:8px 0;">' + u.rols.map(function(r){return '<span class="tag">'+r+'</span>';}).join('') + '</div></div>' +
         '<p style="font-size:13px;line-height:1.45;color:#DDDAD1;margin:10px 0;">' + u.bio + '</p>' +
-        '<div class="box"><div class="row"><span>Edad</span><strong>' + u.age + ' años</strong></div><div class="row"><span>Pronombres</span><strong>' + u.pr + '</strong></div><div class="row"><span>Localidad</span><strong>' + u.loc + '</strong></div><div class="row"><span>Formación</span><strong>' + u.edu + '</strong></div></div>' +
+        '<div class="box"><div class="row"><span>Edad</span><strong style="font-weight:700;">' + u.age + ' años</strong></div><div class="row"><span>Pronombres</span><strong style="font-weight:700;">' + u.pr + '</strong></div><div class="row"><span>Localidad</span><strong style="font-weight:700;">' + u.loc + '</strong></div><div class="row"><span>Formación</span><strong style="font-weight:700;">' + u.edu + '</strong></div></div>' +
         '<button type="button" class="btn" onclick="chatU(\'' + u.id + '\')">Contactar</button>';
     }
 
     function drawChats() {
       byId('chatList').innerHTML = S.chats.map(function(c){
         var last = c.msgs[c.msgs.length-1];
-        return '<div class="chat-row" onclick="openChat(\'' + c.id + '\')"><img src="' + c.av + '"/><div style="flex:1;min-width:0;"><div style="display:flex;justify-content:space-between;"><strong style="font-size:13px;">' + c.nom + '</strong><span style="font-size:10px;color:var(--muted);">' + last.h + '</span></div><p style="font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (last.f==='m'?'Vos: ':'') + last.t + '</p></div>' + (c.unr?'<span style="width:8px;height:8px;border-radius:50%;background:var(--yellow);"></span>':'') + '</div>';
+        return '<div class="chat-row" onclick="openChat(\'' + c.id + '\')"><img src="' + c.av + '"/><div style="flex:1;min-width:0;"><div style="display:flex;justify-content:space-between;"><strong style="font-size:13px;font-weight:700;">' + c.nom + '</strong><span style="font-size:10px;color:var(--muted);">' + last.h + '</span></div><p style="font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (last.f==='m'?'Vos: ':'') + last.t + '</p></div>' + (c.unr?'<span style="width:8px;height:8px;border-radius:50%;background:var(--yellow);"></span>':'') + '</div>';
       }).join('');
     }
     function openChat(id) { S.cId = id; var c = S.chats.find(function(x){return x.id===id;}); if(c) c.unr=false; go('08B',{id:id}); }
@@ -624,7 +635,7 @@
     }
     function drawThread(id) {
       var c = S.chats.find(function(x){return x.id===id;}) || S.chats[0]; S.cId = c.id;
-      byId('chatThread').innerHTML = '<div class="thead"><img src="' + c.av + '"/><div style="flex:1;"><strong style="font-size:14px;display:block;">' + c.nom + '</strong><span style="font-size:11px;color:var(--yellow);">' + c.rol + '</span></div><button type="button" class="btn sm sec" onclick="openU(\'' + c.cid + '\')">Perfil</button></div>' +
+      byId('chatThread').innerHTML = '<div class="thead"><img src="' + c.av + '"/><div style="flex:1;"><strong style="font-size:14px;font-weight:700;display:block;">' + c.nom + '</strong><span style="font-size:11px;color:var(--yellow);">' + c.rol + '</span></div><button type="button" class="btn sm sec" onclick="openU(\'' + c.cid + '\')">Perfil</button></div>' +
         '<div class="msgs" id="mArea">' + c.msgs.map(function(m){ return '<div class="bbl ' + (m.f==='m'?'s':'r') + '">' + m.t + '</div>'; }).join('') + '</div>' +
         '<form class="cbar" onsubmit="event.preventDefault();sendM(\'' + c.id + '\');"><input id="mDraft" placeholder="Escribí un mensaje..."/><button type="submit" class="ibtn" style="background:var(--violet);">' + ic('send', false, 16) + '</button></form>';
       byId('mArea').scrollTop = 9999;
@@ -660,11 +671,23 @@
       var fn = S.sMode==='p' ? 'openP' : 'openU';
       byId('resBox').innerHTML = '<div class="map"><div class="river"></div>' +
         items.map(function(it){ return '<button type="button" class="pin ' + (sel&&sel.id===it.id?'on':'') + '" style="left:' + it.mx + '%;top:' + it.my + '%;" onclick="S.pin=\'' + it.id + '\';drawRes();">' + ic('pin', false, 12) + ' ' + it.zon.split(' ')[0] + '</button>'; }).join('') +
-        (sel ? '<div class="mpop"><div><strong style="font-size:13px;display:block;">' + (sel.tit||sel.nom) + '</strong><span style="font-size:11px;color:var(--yellow);">' + sel.zon + '</span></div><button type="button" class="btn sm" onclick="' + fn + '(\'' + sel.id + '\')">Abrir</button></div>' : '') +
+        (sel ? '<div class="mpop"><div><strong style="font-size:13px;font-weight:700;display:block;">' + (sel.tit||sel.nom) + '</strong><span style="font-size:11px;color:var(--yellow);">' + sel.zon + '</span></div><button type="button" class="btn sm" onclick="' + fn + '(\'' + sel.id + '\')">Abrir</button></div>' : '') +
       '</div>';
     }
 
+    function drawNewImgBtn() {
+      var btn = byId('npImgBtn');
+      if (npCov) {
+        btn.classList.add('has-img');
+        btn.innerHTML = '<img src="' + npCov + '" alt="Portada"/><span class="upbox-tag">Cambiar imagen</span>';
+      } else {
+        btn.classList.remove('has-img');
+        btn.innerHTML = ic('image', false, 16) + '<span>Seleccionar imagen</span>';
+      }
+    }
+
     function drawNewChips() {
+      drawNewImgBtn();
       byId('npCat').innerHTML = ['Audiovisual','Teatro'].map(function(c){ return '<button type="button" class="chip ' + (npCat===c?'on':'') + '" onclick="npCat=\'' + c + '\';drawNewChips();">' + c + '</button>'; }).join('');
       byId('npRol').innerHTML = CATS.slice(2).map(function(r){ return '<button type="button" class="chip ' + (npRols.indexOf(r)>-1?'on':'') + '" onclick="togNpR(\'' + r + '\')">' + r + '</button>'; }).join('');
     }
@@ -672,15 +695,16 @@
     function pubProj() {
       var tit = byId('npTit').value.trim(); if(!tit){ toast('Ingresá un título'); return; }
       var id = 'p_' + Date.now();
-      S.projs.unshift({ id:id, tit:tit, cat:npCat, rols:npRols.slice(), typ:byId('npTyp').value, aid:'me', aname:S.me.fn+' '+S.me.ln, arol:'EPCTV', aav:S.me.av, zon:byId('npZon').value, mx:50, my:50, cov:'https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80', sum:byId('npDesc').value||'Convocatoria abierta en Rosario.', desc:byId('npDesc').value||'Proyecto colaborativo.' });
-      S.myP.unshift(id); byId('npTit').value=''; byId('npDesc').value=''; toast('¡Proyecto publicado!'); S.act='created'; go('16');
+      var covUrl = npCov || 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80';
+      S.projs.unshift({ id:id, tit:tit, cat:npCat, rols:npRols.slice(), typ:byId('npTyp').value, aid:'me', aname:S.me.fn+' '+S.me.ln, arol:'EPCTV', aav:S.me.av, zon:byId('npZon').value, mx:50, my:50, cov:covUrl, sum:byId('npDesc').value||'Convocatoria abierta en Rosario.', desc:byId('npDesc').value||'Proyecto colaborativo.' });
+      S.myP.unshift(id); byId('npTit').value=''; byId('npDesc').value=''; npCov=''; byId('npImgFile').value=''; toast('¡Proyecto publicado!'); S.act='created'; go('16');
     }
 
     function drawMyProf() {
       var m = S.me;
-      byId('myProfBox').innerHTML = '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;"><img src="' + m.av + '" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid var(--yellow);"/><div><h2 style="font-size:18px;">' + m.fn + ' ' + m.ln + '</h2><p style="font-size:12px;color:var(--yellow);">' + m.loc + '</p><p style="font-size:11px;color:var(--muted);">' + m.age + ' años · ' + m.pr + '</p></div></div>' +
+      byId('myProfBox').innerHTML = '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;"><img src="' + m.av + '" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid var(--yellow);"/><div><h2 style="font-size:18px;font-weight:700;">' + m.fn + ' ' + m.ln + '</h2><p style="font-size:12px;color:var(--yellow);">' + m.loc + '</p><p style="font-size:11px;color:var(--muted);">' + m.age + ' años · ' + m.pr + '</p></div></div>' +
         '<div class="tags" style="margin-bottom:10px;">' + m.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join('') + '</div>' +
-        '<div class="box"><strong style="font-size:11px;color:var(--yellow);">FORMACIÓN</strong><p style="font-size:12px;margin:4px 0 8px;">' + m.edu + '</p><strong style="font-size:11px;color:var(--yellow);">SOBRE MÍ</strong><p style="font-size:12px;margin:4px 0 8px;color:#DDDAD1;">' + m.bio + '</p><strong style="font-size:11px;color:var(--yellow);">EXPERIENCIA</strong><p style="font-size:12px;margin-top:4px;color:#DDDAD1;">' + m.exp + '</p></div>' +
+        '<div class="box"><strong style="font-size:11px;font-weight:700;color:var(--yellow);">FORMACIÓN</strong><p style="font-size:12px;margin:4px 0 8px;">' + m.edu + '</p><strong style="font-size:11px;font-weight:700;color:var(--yellow);">SOBRE MÍ</strong><p style="font-size:12px;margin:4px 0 8px;color:#DDDAD1;">' + m.bio + '</p><strong style="font-size:11px;font-weight:700;color:var(--yellow);">EXPERIENCIA</strong><p style="font-size:12px;margin-top:4px;color:#DDDAD1;">' + m.exp + '</p></div>' +
         '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;"><button type="button" class="chip" onclick="toast(\'' + m.port + '\')">Portfolio</button><button type="button" class="chip" onclick="toast(\'' + m.ig + '\')">Instagram</button><button type="button" class="chip" onclick="toast(\'' + m.oth + '\')">Otros</button></div>' +
         '<button type="button" class="btn" onclick="go(\'14\')">' + ic('edit', false, 16) + ' Editar perfil</button>';
     }
@@ -711,18 +735,18 @@
       if (S.act==='saved') {
         var sp = S.projs.filter(function(p){return S.favP.indexOf(p.id)>-1;});
         var su = S.profs.filter(function(u){return S.favU.indexOf(u.id)>-1;});
-        b.innerHTML = sp.map(function(p){return '<div class="lcard" onclick="openP(\''+p.id+'\')"><img src="'+p.cov+'" style="width:48px;height:48px;border-radius:8px;object-fit:cover;"/><div style="flex:1;"><strong style="font-size:13px;">'+p.tit+'</strong><p style="font-size:11px;color:var(--muted);">'+p.cat+' · '+p.typ+'</p></div><span style="color:var(--magenta);display:inline-flex;">'+ic('heart',true,15)+'</span></div>';}).join('') +
-          su.map(function(u){return '<div class="lcard" onclick="openU(\''+u.id+'\')"><img src="'+u.av+'" style="width:44px;height:44px;border-radius:50%;object-fit:cover;"/><div style="flex:1;"><strong style="font-size:13px;">'+u.nom+'</strong><p style="font-size:11px;color:var(--muted);">'+u.rols.join(' · ')+'</p></div><span style="color:var(--magenta);display:inline-flex;">'+ic('heart',true,15)+'</span></div>';}).join('') || '<p style="text-align:center;color:var(--muted);margin-top:30px;font-size:13px;">Sin guardados todavía.</p>';
+        b.innerHTML = sp.map(function(p){return '<div class="lcard" onclick="openP(\''+p.id+'\')"><img src="'+p.cov+'" style="width:48px;height:48px;border-radius:8px;object-fit:cover;"/><div style="flex:1;"><strong style="font-size:13px;font-weight:700;">'+p.tit+'</strong><p style="font-size:11px;color:var(--muted);">'+p.cat+' · '+p.typ+'</p></div><span style="color:var(--magenta);display:inline-flex;">'+ic('heart',true,15)+'</span></div>';}).join('') +
+          su.map(function(u){return '<div class="lcard" onclick="openU(\''+u.id+'\')"><img src="'+u.av+'" style="width:44px;height:44px;border-radius:50%;object-fit:cover;"/><div style="flex:1;"><strong style="font-size:13px;font-weight:700;">'+u.nom+'</strong><p style="font-size:11px;color:var(--muted);">'+u.rols.join(' · ')+'</p></div><span style="color:var(--magenta);display:inline-flex;">'+ic('heart',true,15)+'</span></div>';}).join('') || '<p style="text-align:center;color:var(--muted);margin-top:30px;font-size:13px;">Sin guardados todavía.</p>';
       } else if (S.act==='applied') {
-        b.innerHTML = S.apps.map(function(a){ var p=getP(a.pid); return '<div class="lcard" onclick="openP(\''+p.id+'\')"><img src="'+p.cov+'" style="width:48px;height:48px;border-radius:8px;object-fit:cover;"/><div><strong style="font-size:13px;display:block;">'+p.tit+'</strong><span style="font-size:11px;color:var(--muted);display:block;">'+p.aname+' · '+a.dt+'</span><span class="tag y" style="display:inline-block;margin-top:4px;">'+a.st+'</span></div></div>'; }).join('') || '<p style="text-align:center;color:var(--muted);margin-top:30px;font-size:13px;">Sin postulaciones.</p>';
+        b.innerHTML = S.apps.map(function(a){ var p=getP(a.pid); return '<div class="lcard" onclick="openP(\''+p.id+'\')"><img src="'+p.cov+'" style="width:48px;height:48px;border-radius:8px;object-fit:cover;"/><div><strong style="font-size:13px;font-weight:700;display:block;">'+p.tit+'</strong><span style="font-size:11px;color:var(--muted);display:block;">'+p.aname+' · '+a.dt+'</span><span class="tag y" style="display:inline-block;margin-top:4px;">'+a.st+'</span></div></div>'; }).join('') || '<p style="text-align:center;color:var(--muted);margin-top:30px;font-size:13px;">Sin postulaciones.</p>';
       } else {
         var mp = S.projs.filter(function(p){return S.myP.indexOf(p.id)>-1;});
-        b.innerHTML = mp.length ? mp.map(function(p){return '<div class="lcard" onclick="openP(\''+p.id+'\')"><div><strong style="font-size:13px;display:block;">'+p.tit+'</strong><span style="font-size:11px;color:var(--muted);">'+p.cat+' · '+p.typ+'</span></div></div>';}).join('') : '<button type="button" class="btn" style="margin-top:20px;" onclick="go(\'12\')">' + ic('plus', false, 16) + ' Crear mi primer proyecto</button>';
+        b.innerHTML = mp.length ? mp.map(function(p){return '<div class="lcard" onclick="openP(\''+p.id+'\')"><div><strong style="font-size:13px;font-weight:700;display:block;">'+p.tit+'</strong><span style="font-size:11px;color:var(--muted);">'+p.cat+' · '+p.typ+'</span></div></div>';}).join('') : '<button type="button" class="btn" style="margin-top:20px;" onclick="go(\'12\')">' + ic('plus', false, 16) + ' Crear mi primer proyecto</button>';
       }
     }
 
     function drawNots() {
-      byId('notBox').innerHTML = S.nots.map(function(n){ return '<div class="lcard ' + (n.unr?'unr':'') + '" onclick="openN(\'' + n.id + '\')"><div style="flex:1;"><strong style="font-size:13px;display:block;">' + n.tit + '</strong><p style="font-size:12px;color:var(--muted);margin:3px 0;">' + n.body + '</p><span style="font-size:10px;color:var(--yellow);">' + n.h + '</span></div></div>'; }).join('');
+      byId('notBox').innerHTML = S.nots.map(function(n){ return '<div class="lcard ' + (n.unr?'unr':'') + '" onclick="openN(\'' + n.id + '\')"><div style="flex:1;"><strong style="font-size:13px;font-weight:700;display:block;">' + n.tit + '</strong><p style="font-size:12px;color:var(--muted);margin:3px 0;">' + n.body + '</p><span style="font-size:10px;color:var(--yellow);">' + n.h + '</span></div></div>'; }).join('');
       drawBotBar('15');
     }
     function openN(id) { var n = S.nots.find(function(x){return x.id===id;}); if(n){ n.unr=false; go(n.scr,{id:n.tid}); } }
@@ -739,6 +763,13 @@
     byId('mCan').innerHTML = ic('close', false, 15) + ' Cancelar postulación';
     byId('btnUnirme').onclick = function(){ go('02'); };
     byId('toggleGrid').onchange = function(e){ byId('gridOv').classList.toggle('on', e.target.checked); byId('bands').classList.toggle('on', e.target.checked); };
+    byId('npImgFile').onchange = function(e){
+      var file = e.target.files && e.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(ev){ npCov = ev.target.result; drawNewImgBtn(); };
+      reader.readAsDataURL(file);
+    };
     drawJumper();
   </script>
 </body>
